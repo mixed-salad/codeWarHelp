@@ -13,7 +13,7 @@ Example
 
 */
 
-//My code
+//My code that didn't work;
 
 function deleteNth(arr, n) {
   const frequencies = {};
@@ -30,6 +30,29 @@ function deleteNth(arr, n) {
   }
   return arr;
 }
+
+// The modified code that did work;
+
+
+function deleteNth(arr,n){
+  const frequencies = {};
+  const newArr = [];
+  for(let i = 0; i < arr.length; i++){
+    if(!frequencies[arr[i]]) {
+      frequencies[arr[i]] = 1;
+      newArr.push(arr[i]);
+    }else{
+      if(frequencies[arr[i]] < n){
+      frequencies[arr[i]]++;  
+      newArr.push(arr[i]);
+      }else{
+        frequencies[arr[i]]++;
+        //arr.splice(i, 1);
+      }
+    }
+  }
+  return newArr;
+  } 
 
 
 
